@@ -5,7 +5,7 @@ ADRs live in `$ADR_DIR` and use sequential numbering: `0001-slug.md`, `0002-slug
 Create the `$ADR_DIR` directory lazily — only when the first ADR is needed.
 
 ## Settings
-$AGENT_DIR = ~agent/
+$AGENT_DIR = agent~/
 $ADR_DIR = $AGENT_DIR/adr/
 
 ## Template

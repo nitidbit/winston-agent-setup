@@ -19,7 +19,7 @@ Check with the user that these modules match their expectations. Check with the 
 5. Once you have a complete understanding of the problem and solution, use the template below to write the PRD. The PRD should be written as a local markdown file at $PRD_MD. Create the $ISSUES_DIR directory if it doesn't exist. Do NOT submit a GitHub issue or call any external service.
 
 ## Settings
-$AGENT_DIR = ~agent/
+$AGENT_DIR = agent~/
 $ISSUES_DIR = $AGENT_DIR/issues/
 $PRD_MD = $AGENT_DIR/issues/prd.md
 

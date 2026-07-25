@@ -8,7 +8,7 @@ description: Break a PRD into independently-workable issues and write each as a 
 Break a PRD into independently-grabbable issues using vertical slices (tracer bullets), written as local markdown files.
 
 ## Settings
-$AGENT_DIR = ~agent/
+$AGENT_DIR = agent~/
 $ISSUES_DIR = $AGENT_DIR/issues/
 $PRD_MD = $AGENT_DIR/issues/prd.md
 
