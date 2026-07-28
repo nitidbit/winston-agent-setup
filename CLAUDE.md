@@ -8,39 +8,24 @@ Communication
 
 Writing Code
 ---------------
-  * I (Winston) like to work by planning, checking and discussing the plan, and
-    then executing it. Do not write code until I have asked for it.
-  * Write the simplest thing that works. Do not fix other things you
-    see--instead mention those to the user for later work.
-  * When a test is failing, describe the minimum change needed in one sentence
-    and wait for approval before writing any code.
+  * I (Winston) like to work by planning, checking and discussing the plan, and then executing it. Do not write code until I have asked for it.
+  * Write the simplest thing that works. Do not fix other things you see--instead mention those to the user for later work.
+  * When a test is failing, describe the minimum change needed in one sentence and wait for approval before writing any code.
 
 Writing Tests
 -------
   * Write code in a test-driven manner (TDD) which means:
     - outline tests,
     - write one test and see that it fails,
-    -  implement the minimum code to make that one test pass -- nothing more
-       Principle: Do not implement behavior that no test yet covers. If a button
-       test only checks visibility, implement only the render condition -- not
-       the click handler, not the drawer, not the form.
-       This holds even when I've already described the full behavior in
-       plain English before any tests exist -- knowing the eventual spec is
-       not license to implement it early. A stub (e.g. `return false`) that
-       satisfies the one test in front of you is correct; the real logic
-       waits for the test that forces it.
+    - implement the minimum code to make that one test pass -- nothing more Principle: Do not implement behavior that no test yet covers. If a button test only checks visibility, implement only the render condition -- not the click handler, not the drawer, not the form.  This holds even when I've already described the full behavior in plain English before any tests exist -- knowing the eventual spec is not license to implement it early. A stub (e.g. `return false`) that satisfies the one test in front of you is correct; the real logic waits for the test that forces it.
     - Move on to next test passes.
-  * For e2e/integration tests, since the tests are slow, try and test the "happy
-    path" with multiple expectations per test. This also means fewer tests so
-    it's easier for humans to understand.
-  * Try to make tests with a sample input that is complete. Often called
-    `Sample___`. Later tests will modify the good sample data to illustrate
-    error inputs.
+  * For e2e/integration tests, since the tests are slow, try and test the "happy path" with multiple expectations per test. This also means fewer tests so it's easier for humans to understand.
+  * Try to make tests with a sample input that is complete. Often called `Sample___`. Later tests will modify the good sample data to illustrate error inputs.
 
 
 Characteristics of Good Code
 ----------------------------
-This list is in priority order. Most important is at the top.
+Most important characteristics are at the top.
 
 * Prioritize readability
 
@@ -102,3 +87,26 @@ Tools
         agent-browser snapshot     # get element refs (@e1, @e2, ...)
         agent-browser click @e59   # interact using refs
         agent-browser screenshot /tmp/foo.png  # capture and Read the image
+
+Preferred Code Bits
+-------------------
+For each of our projects, here are samples of code that we like with comments
+about what we like about it. Prefer emulating these examples rather than the
+codebase at large
+
+
+### Exemplar Test Suites
+
+#### Athenate - /Users/winstonw/nitidbit/athena-build-app
+
+packages/service/src/domain-utils/issue.test.ts
+- Sample data is easy to read. There is one functon, sampleBuildingIssue().
+    Using that, tests can adjust the bits of data that are important to the test
+    which highlights what's relevant to the situation.
+
+apps/web/e2e/tests/07-funding-sources.spec.ts
+- e2e tests are useful but brittle. They tests that all the layers work
+  together. Prioritize testing:
+  - the happy path
+  - edge cases that users rarely see so manual testing is unlikely to uncover.
+

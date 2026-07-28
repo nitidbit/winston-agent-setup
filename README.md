@@ -11,6 +11,7 @@ Winston's AI Agent Configuration Files
 
 * `/write-a-prd` — Given the context, write out requirements document
 * `/prd-to-issues` — Given requirements document, generate issue docs
+* `please implement issues now`
 * `/review-architecture` — Review code with "Characteristics of Good Code" in
   mind. Make a list of issues, and return the top three.
 
