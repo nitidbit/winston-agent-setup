@@ -4,19 +4,21 @@ description: Generate a Product Requirements Doc (PRD) from the client brief and
 ---
 This skill will be invoked when the user wants to create a PRD. You may skip steps if you don't consider them necessary.
 
-1. Ask the user for a long, detailed description of the problem they want to solve and any potential ideas for solutions.
+1. Check whether $ISSUES_DIR already contains files. If it does, tell the user and ask them to run `/clear-prd-and-issues` first before continuing, so old PRD/issue files don't linger alongside the new work.
 
-2. Explore the repo to verify their assertions and understand the current state of the codebase.
+2. Ask the user for a long, detailed description of the problem they want to solve and any potential ideas for solutions.
 
-3. Interview the user relentlessly about every aspect of this plan until you reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one.
+3. Explore the repo to verify their assertions and understand the current state of the codebase.
 
-4. Sketch out the major modules you will need to build or modify to complete the implementation. Actively look for opportunities to extract deep modules that can be tested in isolation.
+4. Interview the user relentlessly about every aspect of this plan until you reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one.
+
+5. Sketch out the major modules you will need to build or modify to complete the implementation. Actively look for opportunities to extract deep modules that can be tested in isolation.
 
 A deep module (as opposed to a shallow module) is one which encapsulates a lot of functionality in a simple, testable interface which rarely changes.
 
 Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
 
-5. Once you have a complete understanding of the problem and solution, use the template below to write the PRD. The PRD should be written as a local markdown file at $PRD_MD. Create the $ISSUES_DIR directory if it doesn't exist. Do NOT submit a GitHub issue or call any external service.
+6. Once you have a complete understanding of the problem and solution, use the template below to write the PRD. The PRD should be written as a local markdown file at $PRD_MD. Create the $ISSUES_DIR directory if it doesn't exist. Do NOT submit a GitHub issue or call any external service.
 
 ## Settings
 $AGENT_DIR = agent~/

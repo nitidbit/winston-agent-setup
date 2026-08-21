@@ -21,6 +21,14 @@ Writing Tests
     - Move on to next test passes.
   * For e2e/integration tests, since the tests are slow, try and test the "happy path" with multiple expectations per test. This also means fewer tests so it's easier for humans to understand.
   * Try to make tests with a sample input that is complete. Often called `Sample___`. Later tests will modify the good sample data to illustrate error inputs.
+  * Goals of tests:
+    * verify code does what it's supposed to, including edge cases
+    * document what the code does
+    * document the intentions for why we wrote the code
+  * To improve documentation, try to test the entire shape of return values from functions so the reader can see what the output will look like.
+  * When generating sample numbers in tests, use numbers that are easily
+    distingishable such as 111, 222, 333 rather than 001, 002, 003
+
 
 
 Characteristics of Good Code
