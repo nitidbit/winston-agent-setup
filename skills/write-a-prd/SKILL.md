@@ -20,6 +20,8 @@ Check with the user that these modules match their expectations. Check with the 
 
 6. Once you have a complete understanding of the problem and solution, use the template below to write the PRD. The PRD should be written as a local markdown file at $PRD_MD. Create the $ISSUES_DIR directory if it doesn't exist. Do NOT submit a GitHub issue or call any external service.
 
+7. When done, suggest to the user they should review the prd and then run `/prd-to-issues`
+
 ## Settings
 $AGENT_DIR = agent~/
 $ISSUES_DIR = $AGENT_DIR/issues/
@@ -39,15 +41,15 @@ The solution to the problem, from the user's perspective.
 
 A numbered list of user stories and related requirements. Each user story should be in the format below with related requirements indented.:
 
-S1. As an <actor>, I <do some actions>, and <see some output> so that <benefit>
-  R2. Account balances are formatted as USD, e.g. "$1,222,444.00"
+Story-1. As an <actor>, I <do some actions>, and <see some output> so that <benefit>
+  Req-2. Account balances are formatted as USD, e.g. "$1,222,444.00"
 
 <user-story-example>
-S1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
-  R1. Account balances are formatted as USD, e.g. "$1,222,444.00"
-  R2. Negative balances use parentheses, e.g. "($222,333.00)"
-S2. As an operator refreshing a test environment, I want a stale file reference to be logged and skipped, so that one bad row cannot block every future refresh
-  R3. Stale file references must be sent to the logfile.
+Story-1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
+  Req-1. Account balances are formatted as USD, e.g. "$1,222,444.00"
+  Req-2. Negative balances use parentheses, e.g. "($222,333.00)"
+Story-2. As an operator refreshing a test environment, I want a stale file reference to be logged and skipped, so that one bad row cannot block every future refresh
+  Req-3. Stale file references must be sent to the logfile.
 </user-story-example>
 
 ### Stories versus Requirements
