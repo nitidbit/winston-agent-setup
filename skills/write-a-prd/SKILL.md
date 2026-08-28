@@ -4,7 +4,7 @@ description: Generate a Product Requirements Doc (PRD) from the client brief and
 ---
 This skill will be invoked when the user wants to create a PRD. You may skip steps if you don't consider them necessary.
 
-1. Check whether $ISSUES_DIR already contains files. If it does, tell the user and ask them to run `/clear-prd-and-issues` first before continuing, so old PRD/issue files don't linger alongside the new work.
+1. Check whether $ISSUES_DIR already contains files. If it does, tell the user to delete them before continuing, so old PRD/issue files don't linger alongside the new work.
 
 2. Ask the user for a long, detailed description of the problem they want to solve and any potential ideas for solutions.
 

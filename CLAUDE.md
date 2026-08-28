@@ -45,8 +45,6 @@ Most important characteristics are at the top.
 
 * Avoid premature optimization (YAGNI)
 
-* New layer, new abstraction.
-
 * Philosophy of Deep Design
   -   **Intent**: We value high information density behind simple entry points.
   -   **Policy**: Strive to make modules "deep." The interface must be significantly simpler than its hidden internal implementation. 
@@ -56,6 +54,11 @@ Most important characteristics are at the top.
   -   **Intent**: Modules must completely own their structural secrets to minimize change amplification.
   -   **Policy**: Hide implementation decisions. Classes and modules must tightly restrict visibility of internal data structures, helper utilities, and processing steps.
   -   **Judgment Guidance**: Expose only *what* a module does, never *how*. If a system modification requires editing multiple decoupled files, treat it as a symptom of information leakage and refactor the boundaries first.
+
+* Policy on Layer Abstraction (New Layer, New Abstraction)
+  -   **Intent**: Every architectural layer must transform the conceptual representation of the problem, rather than merely passing data downward.
+  -   **Policy**: Do not create intermediate classes, service wrappers, or controllers that mirror the exact method signatures, parameters, and return types of underlying modules.
+  -   **Judgment Guidance**: Identify and eliminate "pass-through methods." If a new module or class does not introduce a completely fresh vocabulary, a simpler data contract, or a higher-level workflow, either merge the adjacent layers or expose the underlying layer directly to callers.
 
 * Policy on Downgrading Complexity
   -   **Intent**: System complexity must be pushed down to the implementer, freeing the user from mental overhead.
@@ -72,14 +75,11 @@ Most important characteristics are at the top.
   -   **Policy**: Document the "why" and the high-level abstractions that are completely invisible to a compiler.
   -   **Judgment Guidance**: Draft the high-level structural design in comments *before* writing the implementation. Avoid literal descriptions that mirror the code keywords; focus exclusively on developer intent and non-obvious constraints. If the function is straightforward, no comment is needed.
 
-* Policy on Layer Abstraction (New Layer, New Abstraction)
-  -   **Intent**: Every architectural layer must transform the conceptual representation of the problem, rather than merely passing data downward.
-  -   **Policy**: Do not create intermediate classes, service wrappers, or controllers that mirror the exact method signatures, parameters, and return types of underlying modules.
-  -   **Judgment Guidance**: Identify and eliminate "pass-through methods." If a new module or class does not introduce a completely fresh vocabulary, a simpler data contract, or a higher-level workflow, either merge the adjacent layers or expose the underlying layer directly to callers.
-
 
 Tools
 -----
+  * git — you may use git to read, but no writing. In general do not commit, check out
+    branches, or other things that change state.
   * agent-browser - https://github.com/vercel-labs/agent-browser
     - Installed at /opt/homebrew/bin/agent-browser
     - Headless browser CLI for inspecting live pages. Use to verify UI changes

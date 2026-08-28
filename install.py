@@ -18,7 +18,6 @@ dot_files = [
     (HERE / 'CLAUDE.md',                                DOT_CLAUDE / 'CLAUDE.md'),
     (HERE / 'skills/prd-to-issues/',                    DOT_CLAUDE / 'skills/prd-to-issues/'),
     (HERE / 'skills/write-a-prd/',                      DOT_CLAUDE / 'skills/write-a-prd/'),
-    (HERE / 'skills/clear-prd-and-issues/',             DOT_CLAUDE / 'skills/clear-prd-and-issues/'),
     (HERE / 'skills/grill-with-docs/',                  DOT_CLAUDE / 'skills/grill-me-with-docs/'),
     (HERE / 'skills/review-architecture/',              DOT_CLAUDE / 'skills/review-architecture/'),
     (HERE / 'skills/improve-codebase-architecture/',    DOT_CLAUDE / 'skills/improve-codebase-architecture/'),
