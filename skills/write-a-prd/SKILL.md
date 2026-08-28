@@ -35,17 +35,40 @@ The problem that the user is facing, from the user's perspective.
 
 The solution to the problem, from the user's perspective.
 
-## User Stories
+## User Stories & Requirements
 
-A LONG, numbered list of user stories. Each user story should be in the format of:
+A numbered list of user stories and related requirements. Each user story should be in the format below with related requirements indented.:
 
-1. As an <actor>, I want a <feature>, so that <benefit>
+S1. As an <actor>, I <do some actions>, and <see some output> so that <benefit>
+  R2. Account balances are formatted as USD, e.g. "$1,222,444.00"
 
 <user-story-example>
-1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
+S1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
+  R1. Account balances are formatted as USD, e.g. "$1,222,444.00"
+  R2. Negative balances use parentheses, e.g. "($222,333.00)"
+S2. As an operator refreshing a test environment, I want a stale file reference to be logged and skipped, so that one bad row cannot block every future refresh
+  R3. Stale file references must be sent to the logfile.
 </user-story-example>
 
-This list of user stories should be extremely extensive and cover all aspects of the feature.
+### Stories versus Requirements
+A story describes someone doing something and the outcome they get, and is small enough that a slice of work could be built from it. Cover the user-visible value, not every aspect of the feature. Most features yield fewer than a dozen genuine stories; stop when you run out rather than padding the list.
+
+Two tests before writing one:
+
+- Read the "so that" clause. If the benefit merely restates the want, it is a requirement, not a story.
+- Ask whether it describes someone doing something, or the system being built a certain way. The second is a requirement.
+
+A developer or operator actor does not by itself make an item a requirement. For internal tooling, how the tool is operated is genuine user-visible value.
+
+Anything failing these tests belongs in Requirements. Never state the same item in more than one section of the PRD.
+
+### Requirements
+
+Requirements are conditions the finished work must satisfy, written as plain declarative sentences with no "As an actor" framing. This is where constraints, qualities, and acceptance criteria live: error-handling policy, output format, ordering guarantees, configuration contracts, security and privacy conditions, performance expectations.
+
+Requirements describe what must be true of the result, observable from outside. Implementation Decisions below describe how it is built. If an item names a module, an interface, or a technical choice, it is a decision, not a requirement.
+
+Stories and requirements are both traceable, and issue files may reference either.
 
 ## Implementation Decisions
 
