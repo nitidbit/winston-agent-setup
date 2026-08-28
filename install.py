@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Install symlinks for my dotfiles
+Install symlinks for my claude config
 
 Usage:
     ./symlink.py
