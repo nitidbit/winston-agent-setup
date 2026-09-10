@@ -14,9 +14,9 @@ Writing Code
 
 Guides for Agents
 -----------------
-- [How to write comments](comments.md)
-- [Characteristics of Good Code](characteristics-of-good-code.md)
-- [Writing Automated Tests](writing-automated-tests.md)
+- [How to write comments](guides/comments.md)
+- [Characteristics of Good Code](guides/characteristics-of-good-code.md)
+- [Writing Automated Tests](guides/writing-automated-tests.md)
 
 
 Tools

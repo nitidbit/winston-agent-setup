@@ -16,6 +16,7 @@ DOT_CLAUDE = Path(os.environ['HOME']) / '.claude'
 dot_files = [
     # src                                               link
     (HERE / 'CLAUDE.md',                                DOT_CLAUDE / 'CLAUDE.md'),
+    (HERE / 'guides/',                                  DOT_CLAUDE / 'guides/'),
     (HERE / 'skills/prd-to-issues/',                    DOT_CLAUDE / 'skills/prd-to-issues/'),
     (HERE / 'skills/write-a-prd/',                      DOT_CLAUDE / 'skills/write-a-prd/'),
     (HERE / 'skills/grill-with-docs/',                  DOT_CLAUDE / 'skills/grill-me-with-docs/'),
